@@ -1,0 +1,40 @@
+A property looks like a field from the outside but internally it is really a method within itself. might a getter or a setter or either a getter setter together.
+
+In typescript, each file can be treated as a module. adding export before the class allows the module to be accessed even outside the method itself.
+In the method where we want to import the module, we start with import followed by the module that has to be imported.
+When it comes to importing types defined in angular, we use the library name as the module name. 
+In typescript, it divide our program into multiple files, in each file, we export more than one types. these types can be methods, functions, classes, s imple objects etc. whereever we want to use, we have to import before using them.
+
+Building blocks of angular apps:
+A component encapsulates a data, html markup and a logic.
+A component can be configured once and can be used in variety of application as needed.
+Ex: In udemy portal, we can consider the courses section as a component, messaging option as another component, navigation bar as another component.
+
+basic usages of a component:
+1. create a component (inside the component.ts file)
+2. register the component in a module
+3. add an element in an html markup
+
+in angular we have a decorator
+    import { Component } from '@angular/core'
+    @Component({
+        selector:'courses',
+        template: '<h2>Courses</h2>'
+    })
+    export class courseComponent{
+        
+    }
+
+Summary:
+1. Create a component in component.ts file (in the cmd prompt, ng g c componentName creates a new component)
+2. register the new component in the app.module.ts file (import the component and add the component name inside the declarations)
+3. use the component in the template of the app. (add the usage in the app.component.html)
+
+Templates
+String interpolation
+Directives <li *ngFor="let course of courses"></li>
+Service: define a separate class as service (in services.ts file) and use the class as required. 
+
+Dependency Injection: 
+when you register a dependency as a provider in a module, angular will create a single instance of the service. its called singleton pattern.
+
